@@ -1,0 +1,79 @@
+<div
+  class="row g-0 border p-4 mt-3"
+  *ngFor="let expense of newExpenses; let i = index"
+>
+  <form #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm, i)">
+    <div class="row">
+      <p class="fs-5 text-decoration-underline col col-sm-11">
+        <span *ngIf="expenseIsEditing; else addMode"
+          >Edit "{{ expense.category }}" expenses</span
+        >
+        <ng-template #addMode>Expense {{ i + 1 }}</ng-template>
+      </p>
+      <div class="col-1" type="button" (click)="onCancelExpense(i)">
+        <i
+          class="bi bi-x-square-fill float-end"
+          style="font-size: 1rem; color: rgb(177, 16, 16)"
+        ></i>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="form-group">
+        <label for="category" class="fw-semibold col-12 col-sm-2 col-lg-1"
+          >Category</label
+        >
+        <select
+          class="col-12 col-xs-6 col-md-3"
+          id="category"
+          name="category"
+          [ngModel]="expense.category"
+          ngModel
+          required
+        >
+          <option value="" disabled>Choose a category</option>
+          <option *ngFor="let category of categories" [ngValue]="category">
+            {{ category }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="amount" class="fw-semibold col-12 col-sm-2 col-lg-1"
+          >Amount</label
+        >
+        <input
+          class="col-12 col-xs-6 col-md-3"
+          type="number"
+          id="amount"
+          name="amount"
+          [ngModel]="expense.amount"
+          required
+          min="1"
+        />
+      </div>
+      <div class="col-12">
+        <button
+          class="btn btn-success rounded-0 btn-sm col-2"
+          type="submit"
+          [disabled]="!expenseForm.valid"
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="row g-0 pt-3 justify-content-between" *ngIf="!expenseIsEditing">
+  <button
+    class="btn btn-primary rounded-0 btn-sm col-xs-12 col-md-3 fs-6"
+    type="button"
+    (click)="onAddExpense()"
+  >
+    Add expense
+  </button>
+  <div
+    class="text-bg-dark col-xs-12 col-md-3 fs-6 gx-0 gy-1 gy-md-0 d-flex align-items-center justify-content-center"
+    style="height: 34px"
+  >
+    Daily Total: {{ totalExpenses }}
+  </div>
+</div>

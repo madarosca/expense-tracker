@@ -1,0 +1,37 @@
+<div class="p-2 px-md-4">
+  <div
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-between"
+  >
+    <a
+      role="button"
+      class="d-flex align-items-center col-sm-auto col-12 justify-content-center"
+      (click)="onItemClick(0)"
+    >
+      <img
+        src="../../assets/img/expenses.png"
+        class="img-fluid"
+        width="50px"
+        alt="Budget"
+      />
+    </a>
+    <div class="d-flex align-items-center justify-content-xs-center">
+      <ul class="nav justify-content-center justify-content-md-between">
+        <div
+          *ngFor="let item of headerItems; let i = index"
+          [ngClass]="{ 'd-none': i === 0 || i === 8 }"
+        >
+          <li class="nav-item" *ngIf="i !== 0">
+            <a
+              class="nav-link fw-medium fs-6 p-2"
+              role="button"
+              [ngClass]="{ active: i === selectedIndex }"
+              (click)="onItemClick(i)"
+            >
+              {{ item.id | titlecase }}
+            </a>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>

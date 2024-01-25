@@ -1,0 +1,63 @@
+<div class="d-flex p-2 p-md-3">
+  <ul
+    class="nav flex-md-column mb-auto flex-fill justify-content-center justify-content-md-between"
+  >
+    <li class="nav-item">
+      <a
+        role="button"
+        class="nav-link px-2 fw-bolder"
+        [ngClass]="{ active: selectedIndex === 0 }"
+        (click)="onItemClick(0)"
+      >
+        {{ "Budget" | uppercase }}
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link px-2 fw-bolder"
+        role="button"
+        [ngClass]="{ active: selectedIndex === 8 }"
+        (click)="onItemClick(8)"
+      >
+        {{ "Summary" | uppercase }}
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link px-2 fw-bolder" role="button">
+        {{ "History" | uppercase }}</a
+      >
+    </li>
+    <hr />
+    <li class="px-2">
+      <a
+        role="button"
+        class="d-block link-dark text-decoration-none dropdown-toggle"
+        data-bs-toggle="collapse"
+        data-bs-target="#account-collapse"
+        aria-expanded="false"
+      >
+        <img
+          src="https://github.com/mdo.png"
+          alt="Profile"
+          width="32"
+          height="32"
+          class="rounded-circle me-2"
+        />
+        <span class="d-none d-md-inline"><strong>Profile</strong></span>
+      </a>
+      <div class="collapse" id="account-collapse">
+        <ul class="nav flex-column small align-content-center">
+          <li class="nav-item">
+            <a class="dropdown-item" role="button">Settings</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item" role="button">Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item" role="button">Sign out</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,7 @@
+.active {
+  color: #0061ad;
+}
+
+.active :hover {
+  color: #0061ad;
+}

@@ -1,0 +1,7 @@
+<ng-container *ngIf="selectedDayIndex !== 8; else showSummary">
+  <app-expense-detail></app-expense-detail>
+  <app-expense-form></app-expense-form>
+</ng-container>
+<ng-template #showSummary>
+  <app-expenses-summary></app-expenses-summary>
+</ng-template>

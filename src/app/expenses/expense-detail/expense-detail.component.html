@@ -1,0 +1,32 @@
+<div
+  class="row g-0 border align-items-center"
+  *ngFor="let expenseEl of expenses; let i = index"
+>
+  <div class="col-4 col-sm-5 fw-semibold px-4">{{ expenseEl.category }}</div>
+  <div class="col-4 col-sm-5 fw-semibold px-4 text-end">
+    {{ expenseEl.amount }}
+  </div>
+  <button
+    class="col-2 col-sm-1 btn btn-light rounded-0 border-start"
+    type="button"
+    (click)="onEditExpense(expenseEl.id)"
+  >
+    <i class="bi bi-pencil-square" style="font-size: 1.5rem; color: #1754af">
+    </i>
+  </button>
+  <button
+    class="col-2 col-sm-1 btn btn-light rounded-0"
+    type="button"
+    (click)="onDeleteExpense(i)"
+  >
+    <i
+      class="bi bi-trash"
+      style="font-size: 1.5rem; color: rgb(177, 16, 16)"
+    ></i>
+  </button>
+  <app-expense-form
+    *ngIf="expenseEl.id === expenseIsEditing"
+    [expenseIsEditing]="expenseIsEditing"
+    (edit)="onEditExpense(expenseEl.id)"
+  ></app-expense-form>
+</div>

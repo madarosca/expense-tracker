@@ -1,0 +1,41 @@
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+@media screen and (min-width: 768px){
+.full-screen,
+  .full-screen>* {
+    min-height: calc(100vh - 140px);
+  }
+
+  .footer, .header {
+      height: 70px;
+    }
+}
+
+.nav-link {
+  color: #000;
+}
+
+.p-datatable-gridlines table>tbody>tr>td {
+  border: 1px solid #e5e7eb;
+}
+
+.p-datatable {
+  border: 1px solid #e5e7eb;
+}
+
+.p-datatable .p-datatable-header {
+  background: #cfe2ff;
+}
+
+.accordion-button:focus {
+  border: none;
+  border-color: transparent;
+  box-shadow: none;
+}

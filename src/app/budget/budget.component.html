@@ -1,0 +1,43 @@
+<div class="text-center" style="min-height: 90px">
+  <img src="../../assets/img/budget-question.png" width="150px" alt="Budget" />
+  <div class="row justify-content-center" *ngIf="!!weeklyBudget && !editBudget">
+    <p class="fs-5 mb-1 fw-semibold">Your weekly budget</p>
+    <p class="fs-2 mb-0">
+      {{ weeklyBudget | customCurrency }}
+      <i
+        class="bi bi-pencil-square"
+        style="cursor: pointer; color: #1754af; font-size: 0.8em"
+        (click)="onEdit()"
+      ></i>
+    </p>
+  </div>
+  <form
+    #budgetForm="ngForm"
+    *ngIf="!weeklyBudget || (editBudget && weeklyBudget)"
+    (ngSubmit)="onSubmit(budgetForm)"
+  >
+    <div class="row g-0 justify-content-center">
+      <label for="weeklyBudget" class="fw-semibold col-12 mb-4">
+        {{
+          editBudget ? "Update your weekly budget" : "Add your weekly budget"
+        }}
+      </label>
+      <input
+        class="col-sm-2"
+        type="number"
+        id="weeklyBudget"
+        name="weeklyBudget"
+        [ngModel]="weeklyBudget"
+        required
+        min="1"
+      />
+      <button
+        class="btn btn-success rounded-0 btn-sm col-sm-2 col-md-1 ms-sm-2 gx-0 gy-1 gy-sm-0"
+        type="submit"
+        [disabled]="!budgetForm.valid"
+      >
+        Save
+      </button>
+    </div>
+  </form>
+</div>
