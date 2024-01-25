@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "expense-tracker-et16"
+  },
+  "targets": {
+    "expense-tracker-et16": {
+      "hosting": {
+        "expense-tracker": [
+          "expense-tracker-et16"
+        ]
+      }
+    }
+  }
+}
