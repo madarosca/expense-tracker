@@ -1,19 +1,14 @@
-import {
-  Component,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { ExpensesService } from '../expenses.service';
 import { Subscription } from 'rxjs';
 import { Expense } from '../expense.model';
 
 @Component({
-  selector: 'app-expense-detail',
-  templateUrl: './expense-detail.component.html',
-  styleUrls: ['./expense-detail.component.css'],
+  selector: 'app-expense-item',
+  templateUrl: './expense-item.component.html',
+  styleUrls: ['./expense-item.component.css'],
 })
-export class ExpenseDetailComponent implements OnInit, OnDestroy {
+export class ExpenseItemComponent implements OnInit, OnDestroy {
   private subscription: Subscription = new Subscription();
   expenses: Expense[] = [];
   @Output() expenseIsEditing: string;

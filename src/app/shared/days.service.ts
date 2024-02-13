@@ -44,6 +44,7 @@ export class DaysService {
     this.selectedDayIndex = index;
     this.selectedDayId = this.getSelectedDayId(index);
     this.expensesService.setExpensesByDay(this.selectedDayId);
+    console.log(index);
     this.dayChanged.next(this.selectedDayIndex);
   }
 }

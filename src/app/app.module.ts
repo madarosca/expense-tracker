@@ -10,7 +10,7 @@ import localeRoExtra from '@angular/common/locales/extra/ro';
 import { AppComponent } from './app.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpenseFormComponent } from './expenses/expense-form/expense-form.component';
-import { ExpenseDetailComponent } from './expenses/expense-detail/expense-detail.component';
+import { ExpenseItemComponent } from './expenses/expense-item/expense-item.component';
 import { ExpensesSummaryComponent } from './expenses/expenses-summary/expenses-summary.component';
 import { HomeComponent } from './main/main.component';
 import { CustomCurrencyPipe } from './shared/custom-currency.pipe';
@@ -24,7 +24,7 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
     AppComponent,
     ExpensesComponent,
     ExpenseFormComponent,
-    ExpenseDetailComponent,
+    ExpenseItemComponent,
     ExpensesSummaryComponent,
     HomeComponent,
     CustomCurrencyPipe,

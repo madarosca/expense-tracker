@@ -1,5 +1,5 @@
 <div
-  class="row g-0 border p-4 mt-3"
+  class="row g-0 border p-4"
   *ngFor="let expense of newExpenses; let i = index"
 >
   <form #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm, i)">

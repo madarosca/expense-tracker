@@ -45,6 +45,8 @@ export class ExpensesSummaryComponent implements OnInit, OnDestroy {
     this.totalExpenses = this.expensesService.getTotalExpenses();
     this.weeklyBudget = this.budgetService.getWeeklyBudget();
 
+    console.log(this.expenses);
+
     this.getChartDataByCategory();
     this.getChartDataByDay();
 
